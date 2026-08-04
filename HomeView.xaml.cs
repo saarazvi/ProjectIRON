@@ -23,11 +23,26 @@ namespace ProjectIRON
             InitializeComponent();
         }
 
+        public event EventHandler? LogWeightRequested;
+
+        private void LogWeightButton_Click(object sender, RoutedEventArgs e)
+        {
+            LogWeightRequested?.Invoke(this, EventArgs.Empty);
+        }
+
         public event EventHandler? LogWorkoutRequested;
 
         private void LogWorkoutButton_Click(object sender, RoutedEventArgs e)
         {
             LogWorkoutRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void ViewLogsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(
+                "The Logs feature is still under development.",
+                "Coming Soon"
+            );
         }
     }
 }

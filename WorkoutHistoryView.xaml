@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ProjectIRON.WorkoutHistoryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid Background="#17191C">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button
+            Content="← Back"
+            Width="100"
+            Height="36"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="25,20,0,0"
+            Click="BackButton_Click"/>
+
+        <!-- Page Content -->
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+
+            <TextBlock
+                Text="Workout History"
+                Foreground="White"
+                FontSize="40"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Margin="0,0,0,20"/>
+
+            <TextBlock
+                Text="This page is under development."
+                Foreground="#B8B8B8"
+                FontSize="18"
+                HorizontalAlignment="Center"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>

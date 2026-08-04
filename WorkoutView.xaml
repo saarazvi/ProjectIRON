@@ -5,83 +5,104 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProjectIRON"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" 
+             d:DesignWidth="1000">
 
     <Grid Background="#17191C">
 
+        <Button
+            Content="View History"
+            Width="140"
+            Height="38"
+            FontSize="14"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,20,25,0"
+            Click="ViewHistoryButton_Click"/>
+
         <StackPanel
-            Width="360"
+            Width="430"
             HorizontalAlignment="Center"
-            VerticalAlignment="Top" Height="422" Margin="0,10,0,0">
+            VerticalAlignment="Center">
 
             <TextBlock
                 Text="Log Workout"
                 Foreground="White"
-                FontSize="28"
+                FontSize="40"
                 FontWeight="Bold"
                 HorizontalAlignment="Center"
-                Margin="0,0,0,25" RenderTransformOrigin="0.471,0.94" Width="180"/>
+                Margin="0,10,0,10"/>
 
             <TextBlock
                 Text="Exercise"
                 Foreground="White"
-                Width="300"
-                Margin="0,0,0,5" />
+                FontSize="15"
+                Width="360"
+                Margin="0,0,0,6"/>
 
             <TextBox
                 x:Name="ExerciseTextBox"
+                Width="360"
                 Height="36"
-                Width="300"
-                Margin="0,0,0,15"
+                FontSize="15"
+                Margin="0,0,0,18"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"/>
 
             <TextBlock
                 Text="Sets"
                 Foreground="White"
-                Width="300"
-                Margin="0,0,0,5"/>
+                FontSize="15"
+                Width="360"
+                Margin="0,0,0,6"/>
 
             <TextBox
                 x:Name="SetsTextBox"
+                Width="360"
                 Height="36"
-                Width="300"
-                Margin="0,0,0,15"
+                FontSize="15"
+                Margin="0,0,0,18"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"/>
 
             <TextBlock
                 Text="Reps"
                 Foreground="White"
-                Width="300"
-                Margin="0,0,0,5"/>
+                FontSize="15"
+                Width="360"
+                Margin="0,0,0,6"/>
 
             <TextBox
                 x:Name="RepsTextBox"
+                Width="360"
                 Height="36"
-                Width="300"
-                Margin="0,0,0,15"
+                FontSize="15"
+                Margin="0,0,0,18"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"/>
 
             <TextBlock
                 Text="Weight"
                 Foreground="White"
-                Width="300"
-                Margin="0,0,0,5"/>
+                FontSize="15"
+                Width="360"
+                Margin="0,0,0,6"/>
 
-            <Grid Margin="0,0,0,22" Width="300">
+            <Grid
+                Width="360"
+                Margin="0,0,0,28">
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="105"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBox
                     x:Name="WeightTextBox"
                     Grid.Column="0"
                     Height="36"
-                    Margin="0,0,5,0"
+                    FontSize="15"
+                    Margin="0,0,10,0"
                     HorizontalContentAlignment="Center"
                     VerticalContentAlignment="Center"/>
 
@@ -89,9 +110,10 @@
                     x:Name="WeightUnitComboBox"
                     Grid.Column="1"
                     Height="36"
+                    FontSize="15"
                     SelectedIndex="0"
                     HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="90">
+                    VerticalContentAlignment="Center">
 
                     <ComboBoxItem Content="lb"/>
                     <ComboBoxItem Content="kg"/>
@@ -106,15 +128,17 @@
 
                 <Button
                     Content="Save Workout"
-                    Width="145"
-                    Height="42"
-                    Margin="0,0,12,0"
+                    Width="170"
+                    Height="40"
+                    FontSize="15"
+                    Margin="0,0,20,0"
                     Click="SaveButton_Click"/>
 
                 <Button
                     Content="Back"
-                    Width="145"
-                    Height="42"
+                    Width="170"
+                    Height="40"
+                    FontSize="15"
                     Click="BackButton_Click"/>
 
             </StackPanel>

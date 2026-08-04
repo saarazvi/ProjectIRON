@@ -5,15 +5,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:ProjectIRON"
              mc:Ignorable="d"
-             d:DesignHeight="450"
-             d:DesignWidth="800">
+             d:DesignHeight="700"
+             d:DesignWidth="1000">
 
     <Grid Background="#17191C">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
 
         <StackPanel
             Width="280"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center">
+            VerticalAlignment="Center" Height="330">
 
             <TextBlock
                 Text="Welcome!"
@@ -34,7 +38,8 @@
                 Content="Log Weight"
                 Height="48"
                 Margin="0,0,0,14"
-                FontSize="15"/>
+                FontSize="15"
+                Click="LogWeightButton_Click"/>
 
             <Button
                 Content="Log Workout"
@@ -47,7 +52,8 @@
                 Content="View Logs"
                 Height="48"
                 Margin="0,0,0,14"
-                FontSize="15"/>
+                FontSize="15"
+                Click="ViewLogsButton_Click"/>
 
             <Button
                 Content="Exit"

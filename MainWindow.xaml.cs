@@ -16,8 +16,54 @@ namespace ProjectIRON
             HomeView homeView = new HomeView();
 
             homeView.LogWorkoutRequested += HomeView_LogWorkoutRequested;
+            homeView.LogWeightRequested += HomeView_LogWeightRequested;
 
             MainContent.Content = homeView;
+        }
+
+        private void ShowWeightView()
+        {
+            WeightView weightView = new WeightView();
+
+            weightView.BackRequested += WeightView_BackRequested;
+            weightView.WeightSaved += WeightView_WeightSaved;
+            weightView.HistoryRequested += WeightView_HistoryRequested;
+
+            MainContent.Content = weightView;
+        }
+
+        private void ShowWeightHistoryView()
+        {
+            WeightHistoryView historyView = new WeightHistoryView();
+
+            historyView.BackRequested += WeightHistoryView_BackRequested;
+
+            MainContent.Content = historyView;
+        }
+
+        private void WeightView_HistoryRequested(object? sender, EventArgs e)
+        {
+            ShowWeightHistoryView();
+        }
+
+        private void WeightHistoryView_BackRequested(object? sender, EventArgs e)
+        {
+            ShowWeightView();
+        }
+
+        private void HomeView_LogWeightRequested(object? sender, EventArgs e)
+        {
+            ShowWeightView();
+        }
+
+        private void WeightView_BackRequested(object? sender, EventArgs e)
+        {
+            ShowHomeView();
+        }
+
+        private void WeightView_WeightSaved(object? sender, EventArgs e)
+        {
+            ShowHomeView();
         }
 
         private void ShowWorkoutView()
@@ -25,6 +71,8 @@ namespace ProjectIRON
             WorkoutView workoutView = new WorkoutView();
 
             workoutView.BackRequested += WorkoutView_BackRequested;
+            workoutView.WorkoutSaved += WorkoutView_WorkoutSaved;
+            workoutView.HistoryRequested += WorkoutView_HistoryRequested;
 
             MainContent.Content = workoutView;
         }
@@ -49,6 +97,34 @@ namespace ProjectIRON
              );
         }
 
+        private void ShowSuccessView()
+        {
+            SuccessView successView = new SuccessView();
+
+            successView.HomeRequested += SuccessView_HomeRequested;
+            successView.LogAnotherWorkoutRequested +=
+                SuccessView_LogAnotherWorkoutRequested;
+
+            MainContent.Content = successView;
+        }
+
+        private void WorkoutView_WorkoutSaved(object? sender, EventArgs e)
+        {
+            ShowSuccessView();
+        }
+
+        private void SuccessView_HomeRequested(object? sender, EventArgs e)
+        {
+            ShowHomeView();
+        }
+
+        private void SuccessView_LogAnotherWorkoutRequested(
+            object? sender,
+            EventArgs e)
+        {
+            ShowWorkoutView();
+        }
+
         private void WorkoutButton_Click( object sender, RoutedEventArgs e)
         {
             WorkoutWindow workoutWindow = new WorkoutWindow();
@@ -56,6 +132,25 @@ namespace ProjectIRON
             workoutWindow.Owner = this;
 
             workoutWindow.ShowDialog();
+        }
+
+        private void ShowWorkoutHistoryView()
+        {
+            WorkoutHistoryView historyView = new WorkoutHistoryView();
+
+            historyView.BackRequested += WorkoutHistoryView_BackRequested;
+
+            MainContent.Content = historyView;
+        }
+
+        private void WorkoutView_HistoryRequested(object? sender, EventArgs e)
+        {
+            ShowWorkoutHistoryView();
+        }
+
+        private void WorkoutHistoryView_BackRequested(object? sender, EventArgs e)
+        {
+            ShowWorkoutView();
         }
 
         private void ViewLogsButton_Click(object sender, RoutedEventArgs e)
