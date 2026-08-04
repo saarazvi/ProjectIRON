@@ -8,16 +8,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 
 namespace ProjectIRON
 {
-    public partial class WorkoutWindow : Window
+    /// <summary>
+    /// Interaction logic for WorkoutView.xaml
+    /// </summary>
+    public partial class WorkoutView : UserControl
     {
-        public WorkoutWindow()
+        public WorkoutView()
         {
             InitializeComponent();
+        }
+
+        public event EventHandler? BackRequested;
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            BackRequested?.Invoke(this, EventArgs.Empty);
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -28,23 +38,23 @@ namespace ProjectIRON
             myWorkout.Sets = int.Parse(SetsTextBox.Text);
             myWorkout.Reps = int.Parse(RepsTextBox.Text);
             myWorkout.Weight = double.Parse(WeightTextBox.Text);
+
+            ComboBoxItem selectedUnit =
+                (ComboBoxItem)WeightUnitComboBox.SelectedItem;
+
+            myWorkout.WeightUnit = selectedUnit.Content.ToString()!;
             myWorkout.Date = DateTime.Now;
 
             MessageBox.Show(
                 $"Exercise: {myWorkout.Exercise}\n" +
                 $"Sets: {myWorkout.Sets}\n" +
                 $"Reps: {myWorkout.Reps}\n" +
-                $"Weight: {myWorkout.Weight}\n" +
-                $"Date: {myWorkout.Date}",
-                "Workout Saved Successfully"
+                $"Weight: {myWorkout.Weight} {myWorkout.WeightUnit}\n" +
+                $"Date: {myWorkout.Date:g}",
+                "Workout Added Successfully",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information
             );
-
-            Close();
-        }
-
-        private void CancelButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

@@ -7,6 +7,36 @@ namespace ProjectIRON
         public MainWindow()
         {
             InitializeComponent();
+
+            ShowHomeView();
+        }
+
+        private void ShowHomeView()
+        {
+            HomeView homeView = new HomeView();
+
+            homeView.LogWorkoutRequested += HomeView_LogWorkoutRequested;
+
+            MainContent.Content = homeView;
+        }
+
+        private void ShowWorkoutView()
+        {
+            WorkoutView workoutView = new WorkoutView();
+
+            workoutView.BackRequested += WorkoutView_BackRequested;
+
+            MainContent.Content = workoutView;
+        }
+
+        private void HomeView_LogWorkoutRequested(object? sender, EventArgs e)
+        {
+            ShowWorkoutView();
+        }
+
+        private void WorkoutView_BackRequested(object? sender, EventArgs e)
+        {
+            ShowHomeView();
         }
 
         private void WeightButton_Click(object sender, RoutedEventArgs e)

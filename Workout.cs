@@ -14,6 +14,8 @@ namespace ProjectIRON
 
         public double Weight { get; set; }
 
+        public string WeightUnit { get; set; }
+
         public DateTime Date { get; set; }
     }
 }
