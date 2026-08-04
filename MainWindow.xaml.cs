@@ -125,15 +125,6 @@ namespace ProjectIRON
             ShowWorkoutView();
         }
 
-        private void WorkoutButton_Click( object sender, RoutedEventArgs e)
-        {
-            WorkoutWindow workoutWindow = new WorkoutWindow();
-
-            workoutWindow.Owner = this;
-
-            workoutWindow.ShowDialog();
-        }
-
         private void ShowWorkoutHistoryView()
         {
             WorkoutHistoryView historyView = new WorkoutHistoryView();

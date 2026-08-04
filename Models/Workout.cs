@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjectIRON
+namespace ProjectIRON.Models
 {
     internal class Workout
     {
-        public string Exercise { get; set; }
+        public string Exercise { get; set; } = string.Empty;
 
         public int Sets { get; set; }
 
@@ -14,7 +14,7 @@ namespace ProjectIRON
 
         public double Weight { get; set; }
 
-        public string WeightUnit { get; set; }
+        public string WeightUnit { get; set; } = string.Empty;
 
         public DateTime Date { get; set; }
     }

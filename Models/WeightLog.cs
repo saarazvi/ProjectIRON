@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectIRON
+namespace ProjectIRON.Models
 {
     internal class WeightLog
     {
