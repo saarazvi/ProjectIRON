@@ -17,6 +17,7 @@ namespace ProjectIRON
 
             homeView.LogWorkoutRequested += HomeView_LogWorkoutRequested;
             homeView.LogWeightRequested += HomeView_LogWeightRequested;
+            homeView.ExitRequested += HomeView_ExitRequested;
 
             MainContent.Content = homeView;
         }
@@ -155,6 +156,11 @@ namespace ProjectIRON
         }
 
         private void ExitButton_click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void HomeView_ExitRequested(object? sender, EventArgs e)
         {
             Close();
         }

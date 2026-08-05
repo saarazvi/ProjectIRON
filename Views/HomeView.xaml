@@ -58,7 +58,8 @@
             <Button
                 Content="Exit"
                 Height="48"
-                FontSize="15"/>
+                FontSize="15"
+                Click="ExitButton_Click"/>
 
         </StackPanel>
 

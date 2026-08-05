@@ -44,5 +44,12 @@ namespace ProjectIRON
                 "Coming Soon"
             );
         }
+        
+        public event EventHandler? ExitRequested;
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
+        {
+            ExitRequested?.Invoke(this, EventArgs.Empty);
+        }
     }
 }
