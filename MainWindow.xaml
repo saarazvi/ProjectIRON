@@ -5,7 +5,8 @@
         Height="650"
         Width="700"
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        Closing="MainWindow_Closing">
     
    
 

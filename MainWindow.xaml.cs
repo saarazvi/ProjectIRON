@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.ComponentModel;
 
 namespace ProjectIRON
 {
@@ -9,6 +10,21 @@ namespace ProjectIRON
             InitializeComponent();
 
             ShowHomeView();
+        }
+
+        private void MainWindow_Closing(object? sender, CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "Are you sure you want to exit?",
+                "Exit Project IRON",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+
+            if (result == MessageBoxResult.No)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void ShowHomeView()
