@@ -1,5 +1,6 @@
-﻿using System.Windows;
+﻿using ProjectIRON.Views;
 using System.ComponentModel;
+using System.Windows;
 
 namespace ProjectIRON
 {
@@ -80,7 +81,27 @@ namespace ProjectIRON
 
         private void WeightView_WeightSaved(object? sender, EventArgs e)
         {
+            ShowWeightSuccessView();
+        }
+
+        private void ShowWeightSuccessView()
+        {
+            WeightSuccessView successView = new WeightSuccessView();
+
+            successView.HomeRequested += WeightSuccessView_HomeRequested;
+            successView.LogAnotherWeightRequested += WeightSuccessView_LogAnotherWeightRequested;
+
+            MainContent.Content = successView;
+        }
+
+        private void WeightSuccessView_HomeRequested(object? sender, EventArgs e)
+        {
             ShowHomeView();
+        }
+
+        private void WeightSuccessView_LogAnotherWeightRequested(object? sender, EventArgs e)
+        {
+            ShowWeightView();
         }
 
         private void ShowWorkoutView()

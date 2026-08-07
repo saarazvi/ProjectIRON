@@ -14,14 +14,22 @@ using System.Windows.Shapes;
 
 namespace ProjectIRON
 {
-    /// <summary>
-    /// Interaction logic for WorkoutView.xaml
-    /// </summary>
     public partial class WorkoutView : UserControl
     {
         public WorkoutView()
         {
             InitializeComponent();
+
+            Loaded += WorkoutView_Loaded;
+        }
+
+        private void WorkoutView_Loaded(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                ExerciseTextBox.Focus();
+                Keyboard.Focus(ExerciseTextBox);
+            }));
         }
 
         public event EventHandler? BackRequested;

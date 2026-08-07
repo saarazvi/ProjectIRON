@@ -2,6 +2,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ProjectIRON
 {
@@ -10,6 +11,17 @@ namespace ProjectIRON
         public WeightView()
         {
             InitializeComponent();
+
+            Loaded += WeightView_Loaded;
+        }
+
+        private void WeightView_Loaded(object sender, RoutedEventArgs e)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                WeightTextBox.Focus();
+                Keyboard.Focus(WeightTextBox);
+            }));
         }
 
         public event EventHandler? BackRequested;
