@@ -20,7 +20,7 @@ namespace ProjectIRON
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 WeightTextBox.Focus();
-                //Keyboard.Focus(WeightTextBox);
+                Keyboard.Focus(WeightTextBox);
             }));
         }
 
